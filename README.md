@@ -1,7 +1,7 @@
 # SmartGaragePi
 An IoT implementation of a Smart Garage using Raspberry Pi
 
-This project was done for my Thesis @ University of Piraeus , Department of Digital Systems
+This project was done for @year0 and @IliasKokkolis Thesis @ University of Piraeus , Department of Digital Systems
 
 Raspberry Pi 3 was used for the testing and Flask for the Web App
 
