@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="main.css" media="screen"/>
+	<title> Smart Garage </title>
+</head>
+<body>
+
+	<header>
+      <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-0"><a class="text-white navbar-brand" href="#">Welcome to your Smart Garage </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#da-navbarNav" aria-controls="da-navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse text-uppercase" id="da-navbarNav">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="da-home-page-text" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container">
+          <div class="col-md-12">
+            <h2 class="display-3">Welcome to your Smart Garage</h2>
+            <h3 class="h5 mt-3">Let us handle your Garage needs</h3><a class="smooth-scroll btn btn-outline-light mt-4" href="#learn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<div>
+	<div class="container">
+		<div class="row justify-content-center align-self-center" >
+			<button type="button" class="btn btn-dark"><a href="/senTMP/get">  Get Temperature! </a></button>
+		</div>
+		<div class="row justify-content-center align-self-center">
+			<p class="text" id="temp">&nbsp Temperature: <b>{{ temperature }}</b> &nbsp </p>
+			<p class="text" id="humid">&nbsp Humidity: <b>{{ humidity }}</b> &nbsp</p>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-self-center">
+		<br>
+		<form method="get" action="/video_feed">
+			<button class="btn btn-dark" type="submit"> Camera Live Feed </button>
+		</form>
+	</div>
+
+	<div class="row justify-content-center align-self-center">
+			<h3> White LED &nbsp{{ ledRed }} &nbsp </h3>
+			<h3>  Red LED &nbsp{{ ledYlw }} &nbsp</h3>
+	</div>
+
+	<div class="container">
+		<div class="row justify-content-center align-self-center">
+			<h3>
+				White Light
+				<button type="button" class="btn btn-dark"><a href="/ledRed/on" class="button">TURN ON</a></button>
+				<button type="button" class="btn btn-dark"><a href="/ledRed/off" class="button">TURN OFF</a></button>
+			</h3>
+		</div>
+
+		<div class="row justify-content-center align-self-center">
+			<h3>
+				Red Light
+				<button type="button" class="btn btn-dark"><a href="/ledYlw/on" class="button">TURN ON</a></button>
+				<button type="button" class="btn btn-dark"><a href="/ledYlw/off" class="button">TURN OFF</a></button>
+			</h3>
+		</div>
+	</div>
+		<div class="row justify-content-center align-self-center">
+				<h3>	Garage Door
+				<button type="button" class="btn btn-dark"><a href="/servoPIN/on" class="button">TURN ON</a></button>
+				<button type="button" class="btn btn-dark"><a href="/servoPIN/off" class="button">TURN OFF</a></button>
+				</h3>
+		</div>
+			<div class="row justify-content-center align-self-center">
+				<h3>
+					Alarm System Activate
+					<button type="button" class="btn btn-dark"><a href="/motionPIR/on" class="button" onclick="alarm()">ACTIVATE ALARM</a></button>
+					<br><p id="alarm"></p>
+					Alarm System Deactivate
+					<button type="button" class="btn btn-dark"><a href="/motionPIR/off" class="button">DEACTIVATE ALARM</a></button>
+				</h3>
+			</div>
+</div>
+
+	<footer class="row justify-content-center align-self-center">
+		This Smart Garage was made in terms of our Diploma Exercise at Digital Systems University of Piraeus
+	</footer>
+<script>
+function alarm() {
+ document.getElementById("alarm").innerHTML= "Alarm System is now activated!";
+}
+</script>
+</body>
+</html>
