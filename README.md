@@ -13,3 +13,5 @@ The project includes:
 * A humidity and temperature sensor.
 * LED controllable lights.
 * Live video feed from the garage with the Raspberry Pi camera module.
+
+Pushbullet API was also used to push a notification ( including an image of the intruder ) whenever the alarm system detects movement.
